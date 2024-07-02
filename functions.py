@@ -43,7 +43,7 @@ def chat_api(sampled_values_str):
     ### change to os 
     client = OpenAI(
     # This is the default and can be omitted
-    api_key="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",
+    api_key="",
     )
     # Persona pattern prompt
     text_persona = """You are the creator of a dataset. You want to upload the dataset to an online repository.
