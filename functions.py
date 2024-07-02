@@ -4,7 +4,6 @@ import dash_ag_grid as dag
 from openai import OpenAI
 
 
-
 ###################################
 ## Function to publish the dataset to OpenML given all the variables
 
@@ -38,6 +37,8 @@ def chat_api(sampled_values_str):
     api_key="",
     )
     # Persona pattern prompt
+    # Other prompts can be also explored, just change the text_persona variable
+
     text_persona = """You are the creator of a dataset. You want to upload the dataset to an online repository.
     You are requested to provide a dataset description.
     Knowing the column names and their sample values you will write a concise
@@ -48,7 +49,8 @@ def chat_api(sampled_values_str):
     Use Case:
 
     """
-    total_prompt = text_persona+sampled_values_str
+    total_prompt = text_persona+sampled_values_str # Concatenating the prompt and the sampled values
+
     chat_completion = client.chat.completions.create(
         messages=[
             {
